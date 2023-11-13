@@ -57,7 +57,19 @@ Here are R packages needed.
 # Needed in the book
 library(tidyverse)
 library(nycflights13)
+
+# Others
+library(reactable)
+library(reactablefmtr)
+library(ggh4x)
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Making numbers
 
@@ -66,6 +78,13 @@ During the data import process, numeric columns are usually expressed in integer
 ```{=html}
 <iframe width="1000" height="400" src="https://readr.tidyverse.org/reference/parse_atomic.html" ></iframe>
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Making numbers
 
@@ -90,6 +109,13 @@ c("$1,234", "USD 3,513", "59%") |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Counts
 
 The `dplyr` package has a function called `dplyr::count()` that helps to count the number of observations in each group.
@@ -108,6 +134,13 @@ flights |>
   )
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Counts
 
@@ -129,6 +162,13 @@ flights |>
   )
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Counts
 
@@ -154,6 +194,13 @@ flights |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Counts
 
 `dplyr::n()` is a special function that can only be used with some dplyr functions. 
@@ -172,6 +219,13 @@ dplyr::n()
 ```{=html}
 <iframe width="1000" height="350" src="https://dplyr.tidyverse.org/reference/context.html" ></iframe>
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Counts
 
@@ -197,6 +251,13 @@ flights |>
   )
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Counts
 
@@ -249,6 +310,13 @@ flights |>
 
 ::::
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Counts
 
 We can count missing values by combining `sum()` and `is.na()`. Below represents the number of flights that are cancelled for each destination (destination with no departure time from origin). 
@@ -271,6 +339,13 @@ flights |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Exercise 14.3.1
 
 How can you use count() to count the number rows with a missing value for a given variable?
@@ -289,6 +364,13 @@ flights |>
     theme = reactablefmtr::dark()
   )
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercise 14.3.1
 
@@ -318,6 +400,13 @@ flights |>
   )
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Exercise 14.3.1
 
 How can you use count() to count the number rows with a missing value for a given variable?
@@ -342,6 +431,13 @@ flights |>
 
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercise 14.3.2
 
@@ -391,6 +487,14 @@ flights |>
 
 ::::
 
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Exercise 14.3.2
 
 Expand the following calls to `count()` to instead use `group_by()`, `summarize()`, and `arrange()`:
@@ -438,6 +542,13 @@ flights |>
 
 ::::
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Arithmetic and recycling rules
 
 R handles mismatched lengths by **recycling**. Occasionally warnings are given.
@@ -462,6 +573,13 @@ x * c(1, 2)
 
 x * c(1, 2, 3)
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Arithmetic and recycling rules
 
@@ -510,6 +628,13 @@ flights |>
 :::
 
 ::::
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Minimum and maximum
 
@@ -575,6 +700,13 @@ df |>
 
 ::::
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Modular arithmetic
 
 In R, `%/%` does integer division and `%%` computes the remainder:
@@ -607,6 +739,13 @@ In R, `%/%` does integer division and `%%` computes the remainder:
 
 ::::
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Modular arithmetic
 
 We can use modular arithmetic to unpack the `sched_dep_time` variable into hour and minute:
@@ -629,6 +768,13 @@ flights |>
   )
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Modular arithmetic
 
@@ -678,6 +824,13 @@ cancelled_flights |>
 
 ::::
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Logarithms
 
 In R, you have a choice of three logarithms: `log()` (the natural log, base e), `log2()` (base 2), and `log10()` (base 10).
@@ -697,6 +850,14 @@ exp(log(100))
 3^(log(100, base = 3))
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Rounding
 
 Use `round(x)` to round a number to the nearest integer. The second argument, `digits` rounds to the nearest `10^-{digits}`.
@@ -715,6 +876,14 @@ round(123.456, -1) # round to nearest ten
 
 round(123.456, -2) # round to nearest hundred
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Rounding
 
 However, do note that `round` does a Banker's rounding. If a number is half way between two integers, it will be rounded to the even integer. 
@@ -727,6 +896,13 @@ It does this to keep keeps the rounding unbiased: half of all 0.5s are rounded u
 
 round(c(1.5, 2.5, -1.5, -2.5))
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Rounding
 
@@ -746,6 +922,13 @@ See Markus Savli's [Linkedin Post](https://www.linkedin.com/posts/markus-savli_r
 :::
 
 ::::
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Rounding
 
@@ -778,6 +961,13 @@ ceiling(x / 100) * 100
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Cutting numbers into ranges
 
 Use `cut()` to break up (aka bin) a numeric vector into discrete buckets or categories:
@@ -800,6 +990,13 @@ The breaks don’t need to be evenly spaced:
 cut(x, breaks = c(0, 5, 10, 100))
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Cutting numbers into ranges
 
@@ -826,6 +1023,13 @@ y <- c(NA, -10, 5, 10, 30)
 cut(y, breaks = c(0, 5, 10, 15, 20))
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Cumulative and rolling aggregates
 
@@ -890,6 +1094,13 @@ dplyr::cummean(x)
 
 :::
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Cumulative and rolling aggregates
 
 If you need more complex rolling or sliding aggregates, try the `slider` package.
@@ -898,6 +1109,13 @@ If you need more complex rolling or sliding aggregates, try the `slider` package
 <iframe width="1000" height="500" src="https://slider.r-lib.org/index.html" ></iframe>
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Exercise 14.4.8
 
 What trigonometric functions does R provide? Guess some names and look up the documentation. Do they use degrees or radians?
@@ -905,6 +1123,13 @@ What trigonometric functions does R provide? Guess some names and look up the do
 ```{=html}
 <iframe width="1000" height="500" src="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Trig.html" ></iframe>
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercise 14.4.8
 
@@ -925,6 +1150,13 @@ flights |>
   ggplot2::geom_point()
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercise 14.4.8
 
@@ -957,6 +1189,13 @@ calculated_flights |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Exercise 14.4.8
 
 Round `dep_time` and `arr_time` to the nearest five minutes.
@@ -980,6 +1219,13 @@ flights |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Ranks
 
 dplyr provides a number of ranking functions inspired by SQL. They differ primarily in how they handle ties.
@@ -996,6 +1242,14 @@ dplyr::min_rank(x)
 rank(x,ties.method = "min", na.last = "keep")
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Ranks
 
 Use `dplyr::desc(x)` to give the largest values the smallest ranks:
@@ -1010,6 +1264,13 @@ dplyr::min_rank(dplyr::desc(x))
 rank(dplyr::desc(x),ties.method = "min", na.last = "keep")
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Ranks
 
@@ -1067,6 +1328,13 @@ dplyr::cume_dist(x)
 ```
 :::
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Ranks
 
 `row_number()` can also be used without any arguments when inside a dplyr verb. In this case, it’ll give the number of the “current” row. When combined with `%%` (computes remainder) or `%/%` (integer division) this can be a useful tool for dividing data into similarly sized groups:
@@ -1090,6 +1358,13 @@ tibble(id = 1:10) |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Offsets
 
 `dplyr::lead()` and `dplyr::lag()` allow you to refer the values just before or just after the “current” value. They return a vector of the same length as the input, padded with NAs at the start or end:
@@ -1111,6 +1386,13 @@ x <- c(2, 5, 11, 11, 19, 35)
 dplyr::lead(x, n = 1)
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Offsets
 
@@ -1135,6 +1417,14 @@ x <- c(2, 5, 11, 11, 19, 35)
 x != dplyr::lag(x)
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Consecutive identifiers
 
 Sometimes you want to start a new group every time some event occurs.
@@ -1164,6 +1454,13 @@ events |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Consecutive identifiers
 
 To classify rows before and/or after `has_gap == TRUE` into one group. We start with `group = 0` and use `cumsum` to increment each row when `has_gap` is set to TRUE.
@@ -1183,6 +1480,13 @@ events |> dplyr::mutate(
   )
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Consecutive identifiers
 
@@ -1206,6 +1510,13 @@ df |>
     theme = reactablefmtr::dark()
   )
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercise 14.5.4
 
@@ -1232,6 +1543,13 @@ flights |>
   )
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercise 14.5.4
 
@@ -1262,6 +1580,13 @@ flights |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Exercise 14.5.4
 
 What time of day should you fly if you want to avoid delays as much as possible?
@@ -1281,6 +1606,13 @@ flights |>
   geom_point(aes(size = n), color = "black")
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercise 14.5.4
 
@@ -1341,6 +1673,13 @@ flights |>
 
 ::::
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Exercise 14.5.4
 
 :::: {.columns}
@@ -1399,6 +1738,13 @@ flights |>
 
 ::::
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Exercise 14.5.4
 
 For each destination, compute the total minutes of delay. 
@@ -1420,6 +1766,13 @@ flights |>
   )
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercise 14.5.4
 
@@ -1445,6 +1798,13 @@ flights |>
   )
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercise 14.5.4
 
@@ -1474,6 +1834,13 @@ filtered_flights |>
   )
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Exercise 14.5.4
 
 Delays are typically temporally correlated: Using lag(), explore how the average flight delay for an hour is related to the average delay for the previous hour.
@@ -1494,6 +1861,13 @@ filtered_flights |>
     theme = reactablefmtr::dark()
   )
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercise 14.5.4
 
@@ -1521,6 +1895,13 @@ filtered_flights |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Exercise 14.5.4
 
 Look at each destination. Can you find flights that are suspiciously fast (above 575 mph) (i.e. flights that represent a potential data entry error) ? 
@@ -1545,6 +1926,13 @@ flights |>
   )
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercise 14.5.4
  
@@ -1573,6 +1961,12 @@ flights |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercise 14.5.4
 
@@ -1608,6 +2002,13 @@ flights |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Center
 
 For symmetric distributions we generally report the mean using `mean()` while for skewed distributions we usually report the median using `stats::median()`.
@@ -1641,6 +2042,12 @@ flights |>
   ggplot2::geom_point()
 
 ```
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Quantiles
 
@@ -1674,6 +2081,13 @@ flights |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Quantiles
 
 Note that by default, `stats::quantile()` uses algorithm "type 7". Difference between the different algorithm can be found in this [SAS blog post](https://blogs.sas.com/content/iml/2017/05/24/definitions-sample-quantiles.html)
@@ -1682,6 +2096,12 @@ Note that by default, `stats::quantile()` uses algorithm "type 7". Difference be
 <iframe width="1000" height="350" src="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/quantile.html" ></iframe>
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Spread
 
@@ -1712,6 +2132,13 @@ flights |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Distributions
 
 It’s always a good idea to visualize the distribution before committing to your summary statistics. In the following plot, the frequency polygons of `dep_delay` are displayed for each day (365 in total), from minimum `dep_delay` to at most 2 hours.
@@ -1731,6 +2158,13 @@ flights |>
   ggplot2::geom_freqpoly(binwidth = 5, alpha = 1/5)
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Position
 
@@ -1763,6 +2197,13 @@ flights |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Position (Extracting vs filtering)
 
 Extracting values at positions is complementary to filtering on ranks. Filtering gives you all variables, with each observation in a separate row:
@@ -1790,6 +2231,13 @@ flights |>
 
 ```
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## With `mutate()`
 
 -  `x / sum(x)` calculates the proportion of a total.
@@ -1798,6 +2246,13 @@ flights |>
 -  `x / first(x)` computes an index based on the first observation.
 
 It is easy to get the difference between `mutate` and `summarize` confused. Remember that `mutate` returns the same number of rows in a data frame, `summarize` returns just one row, and `summarize` with groups returns a row for each group.
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercises 14.6.7 
 
@@ -1826,6 +2281,13 @@ flights |>
   )
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercises 14.6.7
 
@@ -2076,6 +2538,13 @@ flights_summary |>
 
 :::
 
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
+
 ## Exercises 14.6.7 
 
 Which destinations show the greatest variation in air speed ?
@@ -2103,6 +2572,13 @@ flights |>
   )
 
 ```
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
 
 ## Exercises 14.6.7 
 
@@ -2197,3 +2673,10 @@ flights_ege |>
 :::
 
 ::::
+
+::: footer
+
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+
+:::
