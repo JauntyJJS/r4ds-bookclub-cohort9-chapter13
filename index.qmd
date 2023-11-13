@@ -1,0 +1,2199 @@
+---
+title: |
+  Chapter 14: Numbers
+subtitle: |
+  For the R For Data Science 2nd Edition Book Club Cohort 9  [`r fontawesome::fa(name = "youtube")`](https://www.youtube.com/playlist?list=PL3x6DOfs2NGjVMs1NtbWu4s_ZgGhGKnrN)
+author: Jeremy Selva [`r fontawesome::fa(name = "linkedin")`](https://www.linkedin.com/in/jeremy-selva-085b9112a/) <br> @JauntyJJS [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS) [`r fontawesome::fa(name = "twitter")`](https://twitter.com/JauntyJJS) <br> https://jeremy-selva.netlify.app [`r fontawesome::fa(name = "link")`](https://jeremy-selva.netlify.app/)
+format:
+  revealjs:
+    theme: [dark, custom.scss]
+    self-contained: false
+    controls: true
+    slide-number: true
+    scrollable: true
+    mouse-wheel: true
+    preview-links: auto
+    include-in-header: 
+      text: |
+        <meta name="github-repo" content="JauntyJJS/r4ds-bookclub-cohort9-chapter14" />
+        <meta name="twitter:title" content="Chapter 14: Numbers slides for R For Data Science 2nd Edition Book Club Cohort 9" />
+        <meta name="twitter:description" content="This slide deck covers Chapter 2: Data Visualisation from the book, R For Data Science 2nd Edition. This is presented for the R4DS book club, cohort 9." />
+        <meta name="twitter:url" content="https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14" />
+        <meta name="twitter:image" content="https://raw.githubusercontent.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14/main/share-card.png" />
+        <meta name="twitter:image:alt" content="Title slide of Chapter 14: Numbers from the book, R For Data Science 2nd Edition presented at the R4DS book club, cohort 9." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@JauntyJJS" />
+        <meta name="twitter:site" content="@JauntyJJS" />
+        <meta property="og:title" content="Chapter 14: Numbers slides for R For Data Science 2nd Edition Book Club Cohort 9" />
+        <meta property="og:description" content="This slide deck covers Chapter 14: Numbers from the book, R For Data Science 2nd Edition. This is presented for the R4DS book club, cohort 14." />
+        <meta property="og:url" content="https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14" />
+        <meta property="og:image" content="https://raw.githubusercontent.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14/main/share-card.png" />
+        <meta property="og:image:alt" content="Title slide of Chapter 2: Data Visualisation from the book, R For Data Science 2nd Edition presented at the R4DS book club, cohort 9." />
+        <meta property="og:site_name" content="R4DS Cohort 9" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="article:author" content="Jeremy Selva" />
+---
+
+```{r setup, include=FALSE}
+library(fontawesome)
+```
+
+## Introduction
+
+This chapter aims to show what R can do to numeric vectors.
+
+*  Convert string to numbers
+*  Using the `dplyr::count()`
+*  Numeric transformation
+*  Numeric summaries
+
+Here are R packages needed. 
+
+```{r}
+#| label: R packages used
+#| echo: true
+
+# Needed in the book
+library(tidyverse)
+library(nycflights13)
+```
+
+## Making numbers
+
+During the data import process, numeric columns are usually expressed in integer or double. In some cases, they are in strings. The `readr` package has useful functions for parsing strings back to numeric.
+
+```{=html}
+<iframe width="1000" height="400" src="https://readr.tidyverse.org/reference/parse_atomic.html" ></iframe>
+```
+
+## Making numbers
+
+Use `readr::parse_double()` when you have numbers that have been written as strings:
+
+```{r}
+#| label: parse double example
+#| echo: true
+
+c("1.2", "5.6", "1e3") |> 
+  readr::parse_double()
+```
+
+Use `readr::parse_number()` to ignore non-numeric text in the numbers:
+
+```{r}
+#| label: parse number example
+#| echo: true
+
+c("$1,234", "USD 3,513", "59%") |> 
+  readr::parse_number()
+
+```
+
+## Counts
+
+The `dplyr` package has a function called `dplyr::count()` that helps to count the number of observations in each group.
+
+```{r}
+#| label: dplyr count intro
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::count(.data[["dest"]]) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Counts
+
+If you want to see the most common values, add `sort = TRUE`:
+
+```{r}
+#| label: dplyr count sort
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::count(.data[["dest"]], 
+               name = "frequency",
+               sort = TRUE) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Counts
+
+The same computation can be done using `dplyr::group_by()`, `dplyr::summarize()` and `dplyr::n()`
+
+```{r}
+#| label: dplyr group summarise
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["dest"]]) |> 
+  dplyr::summarize(
+    n = dplyr::n(),
+    delay = mean(.data[["arr_delay"]], 
+                 na.rm = TRUE)
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Counts
+
+`dplyr::n()` is a special function that can only be used with some dplyr functions. 
+
+```{r}
+#| label: dplyr n
+#| error: true
+#| echo: true
+
+dplyr::n()
+
+```
+
+<br>
+
+```{=html}
+<iframe width="1000" height="350" src="https://dplyr.tidyverse.org/reference/context.html" ></iframe>
+```
+
+## Counts
+
+`dplyr::n_distinct` helps to count the number of distinct (unique) values of one or more variables. For example, we could figure out which destinations are served by the most carriers:
+
+```{r}
+#| label: distinct flight carriers
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["dest"]]) |> 
+  dplyr::summarize(
+    carriers = dplyr::n_distinct(.data[["carrier"]])
+  ) |> 
+  dplyr::arrange(
+    dplyr::desc(.data[["carriers"]])
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 10,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Counts
+
+A weighted count is a sum. For example you could “count” the number of miles each plane flew:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: sum method 1
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["tailnum"]]) |> 
+  dplyr::summarize(
+    miles = sum(.data[["distance"]])
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: sum method 2
+#| echo: true
+
+flights |> 
+  dplyr::count(
+    .data[["tailnum"]], 
+    wt = .data[["distance"]]
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+:::
+
+::::
+
+## Counts
+
+We can count missing values by combining `sum()` and `is.na()`. Below represents the number of flights that are cancelled for each destination (destination with no departure time from origin). 
+
+```{r}
+#| label: cancelled flights
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["dest"]]) |> 
+  dplyr::summarize(
+    n_cancelled = sum(is.na(.data[["dep_time"]]))
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Exercise 14.3.1
+
+How can you use count() to count the number rows with a missing value for a given variable?
+
+```{r}
+#| label: exercise 14.3.1.1
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::count(.data[["dep_time"]]) |> 
+  dplyr::filter(is.na(.data[["dep_time"]])) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+```
+
+## Exercise 14.3.1
+
+Alternatively
+
+```{r}
+#| label: exercise 14.3.1.1 method 2
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::summarise(
+    dplyr::across(
+      .cols = dplyr::everything(), 
+      .fns = ~ sum(is.na(.))
+    )
+  ) |> 
+  tidyr::pivot_longer(
+    cols = dplyr::everything(),
+    names_to = "column names", 
+    values_to = "na count"
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+```
+
+## Exercise 14.3.1
+
+How can you use count() to count the number rows with a missing value for a given variable?
+
+```{r}
+#| label: exercise 14.3.1.1 method 3
+#| echo: true
+
+flights |> 
+  dplyr::summarise(
+    dplyr::across(
+      .cols = everything(), 
+      .fns = ~ sum(is.na(.)),
+      .names = "{col}_na_count"
+                  )
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+
+```
+
+## Exercise 14.3.2
+
+Expand the following calls to `count()` to instead use `group_by()`, `summarize()`, and `arrange()`:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: count method Exercise 14.3.2 1
+#| echo: true
+
+flights |> 
+  dplyr::count(.data[["dest"]], 
+               sort = TRUE) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: group by method Exercise 14.3.2 1
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["dest"]]) |> 
+  dplyr::summarise(n = dplyr::n()) |> 
+  dplyr::arrange(dplyr::desc(.data[["n"]])) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+  
+```
+
+:::
+
+::::
+
+## Exercise 14.3.2
+
+Expand the following calls to `count()` to instead use `group_by()`, `summarize()`, and `arrange()`:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: count method Exercise 14.3.2 2
+#| echo: true
+
+flights |> 
+  dplyr::count(.data[["tailnum"]], 
+               wt = .data[["distance"]]) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: group by method Exercise 14.3.2 2
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["tailnum"]]) |> 
+  dplyr::summarise(n = sum(.data[["distance"]])) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+  
+```
+
+:::
+
+::::
+
+## Arithmetic and recycling rules
+
+R handles mismatched lengths by **recycling**. Occasionally warnings are given.
+
+```{r}
+#| label: recycling rule 1
+#| echo: true
+
+x <- c(1, 2, 10, 20)
+```
+<br>
+```{r}
+#| label: recycling rule 2
+#| echo: true
+#| warning: true
+
+x / 5
+
+x / c(5, 5, 5, 5)
+
+x * c(1, 2)
+
+x * c(1, 2, 3)
+```
+
+## Arithmetic and recycling rules
+
+Recycling rules also applied to logical comparison. Below is an example when `==` is used instead of `%in%`. Because of the recycling rules, the `dplyr::filter` function will find flights in odd numbered rows that departed in January and flights in even numbered rows that departed in February
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: recycling rule logical
+#| echo: true
+
+flights |> 
+  dplyr::mutate(row = 1:nrow(flights), 
+                .before = "year") |> 
+  dplyr::filter(.data[["month"]] == c(1, 2)) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: recycling rule logical 2
+#| echo: true
+
+flights |> 
+  dplyr::mutate(row = 1:nrow(flights), 
+                .before = "year") |> 
+  dplyr::filter(.data[["month"]] %in% c(1, 2)) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+:::
+
+::::
+
+## Minimum and maximum
+
+Functions are `pmin()` and `pmax()` will return the smallest or largest value in each row. This is different to the summary functions `min()` and `max()` which take multiple observations and return a single value.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: pmin and pmax
+#| echo: true
+
+df <- tibble::tribble(
+  ~x, ~y,
+  1,  3,
+  5,  2,
+  7, NA,
+)
+
+df |> 
+  dplyr::mutate(
+    min = pmin(x, y, na.rm = TRUE),
+    max = pmax(x, y, na.rm = TRUE)
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: min and max
+#| echo: true
+
+df <- tibble::tribble(
+  ~x, ~y,
+  1,  3,
+  5,  2,
+  7, NA,
+)
+
+df |> 
+  dplyr::mutate(
+    min = min(x, y, na.rm = TRUE),
+    max = max(x, y, na.rm = TRUE)
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+:::
+
+::::
+
+## Modular arithmetic
+
+In R, `%/%` does integer division and `%%` computes the remainder:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: integer division
+#| echo: true
+
+1:10 %/% 3
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: compute remainder
+#| echo: true
+
+1:10 %% 3
+
+```
+
+:::
+
+::::
+
+## Modular arithmetic
+
+We can use modular arithmetic to unpack the `sched_dep_time` variable into hour and minute:
+
+```{r}
+#| label: schedule departure time
+#| output-location: column
+#| echo: true
+#
+flights |> 
+  dplyr::mutate(
+    hour = .data[["sched_dep_time"]] %/% 100,
+    minute = .data[["sched_dep_time"]] %% 100,
+    .keep = "used"
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Modular arithmetic
+
+Proportion of cancelled flights varies over the course of the day. Cancellations seem to accumulate over the course of the day until 8pm, very late flights are much less likely to be cancelled.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: Proportion of cancelled flights
+#| echo: true
+
+cancelled_flights <- flights |> 
+  dplyr::group_by(hour = .data[["sched_dep_time"]] %/% 100) |> 
+  dplyr::summarize(
+    prop_cancelled = mean(is.na(.data[["dep_time"]])),
+    total_cancelled = sum(is.na(.data[["dep_time"]])),
+    n = dplyr::n())
+
+cancelled_flights |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 2,
+    theme = reactablefmtr::dark()
+  )
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: Proportion of cancelled flights plot
+#| echo: true
+
+cancelled_flights |> 
+  # filter the one flight that departs at 1:06 am
+  filter(.data[["hour"]] > 1) |> 
+  ggplot(aes(x = hour, y = prop_cancelled)) +
+  geom_line(color = "grey50") + 
+  geom_point(aes(size = n))
+
+```
+
+:::
+
+::::
+
+## Logarithms
+
+In R, you have a choice of three logarithms: `log()` (the natural log, base e), `log2()` (base 2), and `log10()` (base 10).
+
+The inverse of `log()` is `exp()`; to compute the inverse of log2() or log10() you’ll need to use 2^ or 10^
+
+```{r}
+#| label: Logarithms
+#| echo: true
+
+exp(log(100))
+
+2^log2(100)
+
+10^log10(100)
+
+3^(log(100, base = 3))
+
+```
+## Rounding
+
+Use `round(x)` to round a number to the nearest integer. The second argument, `digits` rounds to the nearest `10^-{digits}`.
+
+```{r}
+#| label: rounding digits
+#| echo: true
+
+round(123.456)     # nearest integer
+
+round(123.456, 2)  # two digits
+
+round(123.456, 1)  # one digit
+
+round(123.456, -1) # round to nearest ten
+
+round(123.456, -2) # round to nearest hundred
+```
+## Rounding
+
+However, do note that `round` does a Banker's rounding. If a number is half way between two integers, it will be rounded to the even integer. 
+
+It does this to keep keeps the rounding unbiased: half of all 0.5s are rounded up, and half are rounded down.
+
+```{r}
+#| label: banker rounding
+#| echo: true
+
+round(c(1.5, 2.5, -1.5, -2.5))
+```
+
+## Rounding
+
+See Markus Savli's [Linkedin Post](https://www.linkedin.com/posts/markus-savli_rounding-in-sas-and-r-activity-7117527026302873601-Ql1m/) on difference between SAS and R rounding methods.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/SAS_to_R_rounding.png){fig-alt="A figure showing how to use R to get SAS rounding method."}
+
+:::
+
+::: {.column width="50%"}
+
+![](images/R_to_SAS_rounding.png){fig-alt="A figure showing how to use SAS to get R rounding method."}
+:::
+
+::::
+
+## Rounding
+
+`floor()` always rounds down and ceiling() always rounds up:
+
+```{r}
+#| label: floor and ceiling
+#| echo: true
+
+x <- 123.456
+
+floor(x)
+
+ceiling(x)
+
+```
+
+However, they do not have a `digits` argument like `round`. There is a need to scale down, round, and then scale back up. 
+
+```{r}
+#| label: floor and ceiling with digits
+#| echo: true
+
+# Round down to nearest two decimal places
+floor(x / 0.01) * 0.01
+
+# Round up to nearest hundred
+ceiling(x / 100) * 100
+
+
+```
+
+## Cutting numbers into ranges
+
+Use `cut()` to break up (aka bin) a numeric vector into discrete buckets or categories:
+
+```{r}
+#| label: cut introduction
+#| echo: true
+
+x <- c(1, 2, 5, 10, 15, 20)
+cut(x, breaks = c(0, 5, 10, 15, 20))
+
+```
+
+The breaks don’t need to be evenly spaced:
+
+```{r}
+#| label: cut spaces
+#| echo: true
+
+cut(x, breaks = c(0, 5, 10, 100))
+
+```
+
+## Cutting numbers into ranges
+
+You can optionally supply your own labels. Note that there should be one less labels than breaks.
+
+```{r}
+#| label: cut own labels
+#| echo: true
+
+cut(x, 
+  breaks = c(0, 5, 10, 15, 20), 
+  labels = c("small", "medium", "large", "XL")
+)
+
+```
+
+Any values outside (30) of the range of the breaks (0-20) will become NA:
+
+```{r}
+#| label: cut NA example
+#| echo: true
+
+y <- c(NA, -10, 5, 10, 30)
+cut(y, breaks = c(0, 5, 10, 15, 20))
+
+```
+
+## Cumulative and rolling aggregates
+
+Base R provides `cumsum()`, `cumprod()`, `cummin()`, `cummax()` for running, or cumulative, sums, products, mins and maxes. dplyr provides `cummean()` for cumulative means. Cumulative sums tend to come up the most in practice:
+
+::: {.panel-tabset}
+
+### cumsum
+
+```{r}
+#| label: cumsum example
+#| echo: true
+
+x <- 1:10
+cumsum(x)
+
+```
+
+### cumprod
+
+```{r}
+#| label: cumprod example
+#| echo: true
+
+x <- 1:10
+cumprod(x)
+
+```
+
+### cummin
+
+```{r}
+#| label: cummin example
+#| echo: true
+
+x <- 1:10
+cummin(x)
+
+```
+
+### cummax
+
+```{r}
+#| label: cummax example
+#| echo: true
+
+x <- 1:10
+cummax(x)
+
+```
+
+### cummean
+
+```{r}
+#| label: cummean example
+#| echo: true
+
+x <- 1:10
+dplyr::cummean(x)
+
+```
+
+:::
+
+## Cumulative and rolling aggregates
+
+If you need more complex rolling or sliding aggregates, try the `slider` package.
+
+```{=html}
+<iframe width="1000" height="500" src="https://slider.r-lib.org/index.html" ></iframe>
+```
+
+## Exercise 14.4.8
+
+What trigonometric functions does R provide? Guess some names and look up the documentation. Do they use degrees or radians?
+
+```{=html}
+<iframe width="1000" height="500" src="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Trig.html" ></iframe>
+```
+
+## Exercise 14.4.8
+
+Currently `dep_time` and `sched_dep_time` are convenient to look at, but hard to compute with because they’re not really continuous numbers. You can see the basic problem by running the code below: there’s a gap between each hour.
+
+```{r}
+#| label: truthful representation of time before
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::filter(.data[["month"]] == 1, 
+                .data[["day"]] == 1) |> 
+  ggplot2::ggplot(
+    mapping = ggplot2::aes(
+      x = .data[["sched_dep_time"]], 
+      y = .data[["dep_delay"]])) +
+  ggplot2::geom_point()
+
+```
+
+## Exercise 14.4.8
+
+Convert them to a more truthful representation of time (either fractional hours or minutes since midnight).
+
+```{r}
+#| label: truthful representation of time
+#| output-location: column
+#| echo: true
+
+calculated_flights <- flights |> 
+  dplyr::mutate(
+    sched_dep_time_hour = .data[["sched_dep_time"]] %/% 100,
+    sched_dep_time_minute = .data[["sched_dep_time"]] %% 100,
+    sched_dep_time_fractions = (sched_dep_time_hour + sched_dep_time_minute/60) * 100,
+    dep_delay_time_hour = .data[["dep_delay"]] %/% 100,
+    dep_delay_time_minute = .data[["dep_delay"]] %% 100,
+    dep_delay_time_fractions = (dep_delay_time_hour + dep_delay_time_minute/60) * 100
+  )
+
+calculated_flights |>
+  dplyr::filter(.data[["month"]] == 1, 
+                .data[["day"]] == 1) |> 
+  ggplot2::ggplot(
+    mapping = ggplot2::aes(
+      x = .data[["sched_dep_time_fractions"]], 
+      y = .data[["dep_delay_time_fractions"]])
+  ) +
+  ggplot2::geom_point()
+
+```
+
+## Exercise 14.4.8
+
+Round `dep_time` and `arr_time` to the nearest five minutes.
+
+```{r}
+#| label: nearest 5 minutes
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::mutate(
+    dep_time_round = round(.data[["dep_time"]] / 5) * 5,
+    arr_time_round = round(.data[["arr_time"]] / 5) * 5,
+    .keep = "used"
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Ranks
+
+dplyr provides a number of ranking functions inspired by SQL. They differ primarily in how they handle ties.
+
+`dplyr::min_rank()` gives every tie the same (smallest) value. It's the way that ranks are usually computed in sports. This is similar to `rank(ties.method = "min")`
+
+```{r}
+#| label: min_rank ascending
+#| echo: true
+
+x <- c(1, 2, 2, 3, 4, NA)
+dplyr::min_rank(x)
+
+rank(x,ties.method = "min", na.last = "keep")
+
+```
+## Ranks
+
+Use `dplyr::desc(x)` to give the largest values the smallest ranks:
+
+```{r}
+#| label: min_rank descending
+#| echo: true
+
+x <- c(1, 2, 2, 3, 4, NA)
+dplyr::min_rank(dplyr::desc(x))
+
+rank(dplyr::desc(x),ties.method = "min", na.last = "keep")
+
+```
+
+## Ranks
+
+-  `dplyr::row_number()` gives every input a unique rank.
+-  `dplyr::dense_rank()` is like `dplyr::min_rank()` but does not leave gaps.
+-  `dplyr::percent_rank()` counts the total number of values less than the observed value x~i~, and divides it by the number of observations minus 1. Missing values are ignored when counting the number of observations
+-  `dplyr::cume_dist()` counts the total number of values less than the observed value x~i~, and divides it by the number of observations minus 1.
+
+::: {.panel-tabset}
+
+### row_number
+
+```{r}
+#| label: row_number
+#| echo: true
+
+x <- c(1, 2, 2, 3, 4, NA)
+dplyr::row_number(x)
+
+rank(x,ties.method = "first", na.last = "keep")
+
+```
+
+### dense_rank
+
+```{r}
+#| label: dense_rank
+#| echo: true
+
+x <- c(1, 2, 2, 3, 4, NA)
+dplyr::dense_rank(x)
+
+```
+
+### percent_rank
+
+```{r}
+#| label: percent_rank
+#| echo: true
+
+x <- c(1, 2, 2, 3, 4, NA)
+dplyr::percent_rank(x)
+
+```
+
+### cume_dist
+
+```{r}
+#| label: cume_dist
+#| echo: true
+
+x <- c(1, 2, 2, 3, 4, NA)
+dplyr::cume_dist(x)
+
+```
+:::
+
+## Ranks
+
+`row_number()` can also be used without any arguments when inside a dplyr verb. In this case, it’ll give the number of the “current” row. When combined with `%%` (computes remainder) or `%/%` (integer division) this can be a useful tool for dividing data into similarly sized groups:
+
+```{r}
+#| label: row_number as dplyr verb
+#| output-location: column
+#| echo: true
+
+tibble(id = 1:10) |> 
+  dplyr::mutate(
+    row0 = dplyr::row_number() - 1,
+    three_groups = row0 %% 3,
+    three_in_each_group = row0 %/% 3
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 6,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Offsets
+
+`dplyr::lead()` and `dplyr::lag()` allow you to refer the values just before or just after the “current” value. They return a vector of the same length as the input, padded with NAs at the start or end:
+
+```{r}
+#| label: lag example
+#| echo: true
+
+x <- c(2, 5, 11, 11, 19, 35)
+dplyr::lag(x, n = 1)
+
+```
+
+```{r}
+#| label: lead example
+#| echo: true
+
+x <- c(2, 5, 11, 11, 19, 35)
+dplyr::lead(x, n = 1)
+
+```
+
+## Offsets
+
+-  `x - lag(x)` gives you the difference between the current and previous value.
+
+```{r}
+#| label: lag example 2
+#| echo: true
+
+x <- c(2, 5, 11, 11, 19, 35)
+x - dplyr::lag(x)
+
+```
+
+-  `x != lag(x)` tells you when the current value changes.
+
+```{r}
+#| label: lag example 3
+#| echo: true
+
+x <- c(2, 5, 11, 11, 19, 35)
+x != dplyr::lag(x)
+
+```
+## Consecutive identifiers
+
+Sometimes you want to start a new group every time some event occurs.
+
+```{r}
+#| label: has gap example 1
+#| output-location: column
+#| echo: true
+
+# Imagine you have the times (in minutes) when someone visited a website.
+# We want to identify new session (gap of more than 5 minutes since the last activity)
+events <- tibble(
+  time = c(0, 1, 2, 3, 5, 10, 12, 15, 17, 19, 20, 27, 28, 30)
+  ) |> 
+  dplyr::mutate(
+    diff = .data[["time"]] - 
+      dplyr::lag(.data[["time"]], default = dplyr::first(.data[["time"]])),
+    has_gap = .data[["diff"]] >= 5
+  ) 
+
+events |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 6,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Consecutive identifiers
+
+To classify rows before and/or after `has_gap == TRUE` into one group. We start with `group = 0` and use `cumsum` to increment each row when `has_gap` is set to TRUE.
+
+```{r}
+#| label: has gap example 2
+#| output-location: column
+#| echo: true
+
+events |> dplyr::mutate(
+  group = cumsum(.data[["has_gap"]])
+) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 6,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Consecutive identifiers
+
+`consecutive_id()` generates a unique identifier that increments every time a variable (or combination of variables) changes.
+
+```{r}
+#| label: consecutive_id example
+#| output-location: column
+#| echo: true
+
+df <- tibble(
+  x = c("a", "a", "a", "b", "c", "c", 
+        "d", "e", "a", "a", "b", "b")
+  ) |> 
+dplyr::mutate(id = dplyr::consecutive_id(.data[["x"]]))
+
+df |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 6,
+    theme = reactablefmtr::dark()
+  )
+```
+
+## Exercise 14.5.4
+
+Find the 10 most delayed (delay arrival) flights using a ranking function. 
+
+```{r}
+#| label: 10 most delayed flights
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::mutate(
+    arr_delay_rank = 
+      dplyr::min_rank(dplyr::desc(.data[["arr_delay"]]))
+  ) |> 
+  dplyr::arrange(.data[["arr_delay_rank"]]) |> 
+  dplyr::select(c("arr_delay_rank", "arr_delay", 
+                  "day", "flight", "tailnum")) |> 
+  dplyr::slice_head(n = 10) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Exercise 14.5.4
+
+Which plane (tailnum) has the worst on-time record ?
+
+```{r}
+#| label: worst on-time record
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["tailnum"]]) |> 
+  dplyr::summarise(
+    number_of_delay = 
+      sum(.data[["arr_delay"]] > 0, na.rm = TRUE),
+  ) |> 
+  dplyr::mutate(
+    number_of_delay_rank = 
+      dplyr::min_rank(dplyr::desc(.data[["number_of_delay"]]))
+  ) |> 
+  dplyr::arrange(.data[["number_of_delay_rank"]]) |> 
+  dplyr::slice_head(n = 10) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Exercise 14.5.4
+
+What time of day should you fly if you want to avoid delays as much as possible?
+
+```{r}
+#| label: time of day to fly
+#| echo: true
+
+flights |> 
+  group_by(dep_hour = sched_dep_time %/% 100) |> 
+  summarize(prop_of_arrival_delay = mean(.data[["arr_delay"]] > 0, na.rm = TRUE),
+            n = sum(.data[["arr_delay"]] > 0, na.rm = TRUE)
+            ) |> 
+  filter(dep_hour > 1) |> 
+  ggplot(aes(x = dep_hour, y = prop_of_arrival_delay)) +
+  geom_line(color = "grey50") +
+  geom_point(aes(size = n), color = "black")
+
+```
+
+## Exercise 14.5.4
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+What does the below code do ?
+
+```{r}
+#| label: row number in filter
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["dest"]]) |> 
+  dplyr::filter(dplyr::row_number() < 4) |> 
+  dplyr::relocate(c("dest")) |> 
+  dplyr::arrange(.data[["dest"]]) |> 
+  dplyr::select(c("dest", "year", "month", 
+                  "day", "arr_time", "tailnum")) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+Assume data is sorted by time, we are filtering to see the first three flights for each destination.
+
+```{r}
+#| label: row number in filter explain
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["dest"]]) |> 
+  dplyr::mutate(
+    group_id = dplyr::row_number()
+  ) |> 
+  dplyr::relocate(c("dest","group_id")) |> 
+  dplyr::filter(.data[["group_id"]] < 4) |> 
+  dplyr::arrange(.data[["dest"]]) |> 
+  dplyr::select(c("dest", "group_id" ,"year", 
+                  "month", "day", "arr_time", "tailnum")) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  ) 
+
+```
+
+:::
+
+::::
+
+## Exercise 14.5.4
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+What does the below code do ?
+
+```{r}
+#| label: row number with dep_delay in filter
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["dest"]]) |> 
+  dplyr::filter(dplyr::row_number(.data[["dep_delay"]]) < 4) |> 
+  dplyr::relocate(c("dest")) |> 
+  dplyr::arrange(.data[["dest"]], .data[["dep_delay"]]) |> 
+  dplyr::select(c("dest", "dep_delay", "year", 
+                  "month", "day", "tailnum")) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+We are filtering to see the three lowest `dep_delay` flights for each destination.
+
+```{r}
+#| label: row number with dep_delay in filter explain
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["dest"]]) |> 
+  dplyr::mutate(
+    group_id = dplyr::row_number(.data[["dep_delay"]])
+  ) |> 
+  dplyr::relocate(c("dest","group_id")) |> 
+  dplyr::filter(.data[["group_id"]] < 4) |> 
+  dplyr::arrange(.data[["dest"]], .data[["dep_delay"]]) |> 
+  dplyr::select(c("dest", "dep_delay", "group_id" ,
+                  "year", "month", "day", "tailnum")) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+:::
+
+::::
+
+## Exercise 14.5.4
+
+For each destination, compute the total minutes of delay. 
+
+```{r}
+#| label: total delay per destination
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["dest"]]) |> 
+  dplyr::summarise(
+    total_delay = sum(.data[["arr_delay"]], na.rm = TRUE)
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Exercise 14.5.4
+
+For each flight, compute the proportion of the total delay for its destination.
+
+```{r}
+#| label: proportion delay per destination
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["tailnum"]], .data[["dest"]]) |> 
+  dplyr::summarise(
+    prop_delay = mean(.data[["arr_delay"]], na.rm = TRUE),
+    total_delay = sum(.data[["arr_delay"]], na.rm = TRUE),
+    n = dplyr::n(),
+    .groups = "drop"
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Exercise 14.5.4
+
+Delays are typically temporally correlated: Using lag(), explore how the average flight delay for an hour is related to the average delay for the previous hour.
+
+```{r}
+#| label: delay correlation
+#| output-location: column
+#| echo: true
+
+filtered_flights <- flights |> 
+  mutate(hour = .data[["dep_time"]] %/% 100) |> 
+  group_by(.data[["year"]], .data[["month"]], 
+           .data[["day"]], .data[["hour"]]) |> 
+  summarize(
+    dep_delay = mean(.data[["dep_delay"]], na.rm = TRUE),
+    n = dplyr::n(),
+    .groups = "drop"
+  ) |> 
+  filter(.data[["n"]] > 5)
+
+filtered_flights |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+```
+
+## Exercise 14.5.4
+
+Delays are typically temporally correlated: Using lag(), explore how the average flight delay for an hour is related to the average delay for the previous hour.
+
+```{r}
+#| label: delay correlation 2
+#| output-location: column
+#| echo: true
+
+filtered_flights <- filtered_flights |> 
+  mutate(prev_dep_delay = 
+           dplyr::lag(.data[["dep_delay"]], n = 1)) 
+
+filtered_flights |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+```
+
+## Exercise 14.5.4
+
+Delays are typically temporally correlated: Later flights are delayed to allow earlier flights to leave
+
+```{r}
+#| label: delay correlation 3
+#| output-location: column
+#| echo: true
+
+filtered_flights |> 
+  filter(.data[["dep_delay"]] > 0, 
+         !is.na(.data[["dep_delay"]]),
+         !is.na(.data[["prev_dep_delay"]])) |> 
+  select(.data[["dep_delay"]], 
+         .data[["prev_dep_delay"]]) |> 
+  ggplot2::ggplot(
+    mapping = ggplot2::aes(
+      x = .data[["prev_dep_delay"]], 
+      y = .data[["dep_delay"]])
+  ) + 
+  ggplot2::geom_point(alpha = 1/10) +
+  ggplot2::geom_smooth(method = "lm") +
+  ggplot2::geom_abline(slope = 1, intercept = 0)
+
+```
+
+## Exercise 14.5.4
+
+Look at each destination. Can you find flights that are suspiciously fast (above 575 mph) (i.e. flights that represent a potential data entry error) ? 
+
+```{r}
+#| label: suspicious flights
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::mutate(
+    air_time_hours = .data[["air_time"]] / 60,
+    air_speed_mph = .data[["distance"]] / .data[["air_time_hours"]]
+  ) |> 
+  dplyr::arrange(dplyr::desc(.data[["air_speed_mph"]])) |> 
+  dplyr::select(c("tailnum", "dest", "air_speed_mph", 
+                  "distance", "air_time_hours")) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Exercise 14.5.4
+ 
+Compute the air time of a flight relative to the shortest flight to that destination. Which flights were most delayed in the air (longest relative air time) ?
+
+```{r}
+#| label: air time relative to shortest
+#| output-location: column
+#| warning: false
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["dest"]]) |> 
+  dplyr::mutate(
+    min_air_time = min(.data[["air_time"]], na.rm = TRUE),
+    relative_air_time = .data[["air_time"]] - .data[["min_air_time"]]
+  ) |> 
+  dplyr::arrange(dplyr::desc(.data[["relative_air_time"]])) |> 
+  dplyr::select(c("tailnum", "dest", "relative_air_time", 
+                  "air_time", "min_air_time")) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+
+## Exercise 14.5.4
+
+Find all destinations that are flown by at least two carriers. Use those destinations to come up with a relative ranking of the carriers based on their performance for the same destination.
+
+```{r}
+#| label: carrier exercise
+#| output-location: column
+#| echo: true
+
+flights |>
+  dplyr::group_by(.data[["dest"]]) |>
+  dplyr::filter(dplyr::n_distinct(.data[["carrier"]]) >= 2) |> 
+  dplyr::select(c("dest", "carrier", "arr_delay")) |> 
+  dplyr::ungroup() |> 
+  dplyr::group_by(.data[["dest"]], .data[["carrier"]]) |> 
+  dplyr::summarise(
+    arr_delay_mean = mean(.data[["arr_delay"]], na.rm = TRUE),
+    n = dplyr::n(),
+    arr_delay_rank = dplyr::min_rank(dplyr::desc(.data[["arr_delay_mean"]])),
+    .groups = "drop"
+  ) |> 
+  dplyr::group_by(.data[["dest"]]) |> 
+  dplyr::mutate(
+    arr_delay_rank = dplyr::min_rank(.data[["arr_delay_mean"]])
+  ) |> 
+  dplyr::arrange(.data[["arr_delay_rank"]]) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Center
+
+For symmetric distributions we generally report the mean using `mean()` while for skewed distributions we usually report the median using `stats::median()`.
+
+The figure compares the mean and median departure delay (in minutes) for each destination. The median delay is always smaller than the mean delay because flights sometimes leave multiple hours late, but never leave multiple hours early.
+
+```{r}
+#| label: mean median example
+#| output-location: column
+#| echo: true
+
+flights |>
+  dplyr::group_by(.data[["year"]], 
+                  .data[["month"]], 
+                  .data[["day"]]) |>
+  dplyr::summarize(
+    mean = mean(.data[["dep_delay"]], na.rm = TRUE),
+    median = stats::median(.data[["dep_delay"]], 
+                           na.rm = TRUE),
+    n = dplyr::n(),
+    .groups = "drop"
+  ) |> 
+  ggplot2::ggplot(
+    mapping = ggplot2::aes(x = .data[["mean"]], 
+                           y = .data[["median"]])) + 
+  ggplot2::geom_abline(
+    slope = 1, 
+    intercept = 0,
+    color = "white",
+    linewidth = 2) +
+  ggplot2::geom_point()
+
+```
+
+## Quantiles
+
+Another function is `stats::quantile()` which is a generalization of the median. `quantile(x, 0.25)` will find the value of x that is greater than 25% of the values, `quantile(x, 0.5)` is equivalent to the median
+
+For the `flights` data, you might want to look at the 95% quantile of delays rather than the maximum, because it will ignore the 5% of most delayed flights which can be quite extreme.
+
+```{r}
+#| label: quantile example
+#| output-location: column
+#| echo: true
+
+flights |>
+  dplyr::group_by(.data[["year"]], 
+                  .data[["month"]], 
+                  .data[["day"]]) |>
+  dplyr::summarize(
+    max = max(.data[["dep_delay"]], 
+              na.rm = TRUE), 
+    q95 = stats::quantile(.data[["dep_delay"]], 
+                          0.95, 
+                          type = 7,
+                          na.rm = TRUE),
+    .groups = "drop"
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Quantiles
+
+Note that by default, `stats::quantile()` uses algorithm "type 7". Difference between the different algorithm can be found in this [SAS blog post](https://blogs.sas.com/content/iml/2017/05/24/definitions-sample-quantiles.html)
+
+```{=html}
+<iframe width="1000" height="350" src="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/quantile.html" ></iframe>
+```
+
+
+## Spread
+
+Two commonly used summaries for spread are the standard deviation, `sd(x)`, and the inter-quartile range, `IQR()`. `IQR()` is `quantile(x, 0.75) - quantile(x, 0.25)` and gives you the range that contains the middle 50% of the data.
+
+We can use this to reveal a small oddity in the flights data. You might expect the spread of the distance between origin and destination to be zero, since airports are always in the same place. But the code below reveals a data oddity for airport EGE:
+
+```{r}
+#| label: IQR example
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["origin"]], 
+                  .data[["dest"]]) |> 
+  dplyr::summarize(
+    distance_sd = stats::IQR(.data[["distance"]]), 
+    n = dplyr::n(),
+    .groups = "drop"
+  ) |> 
+  dplyr::filter(.data[["distance_sd"]] > 0) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+
+```
+
+## Distributions
+
+It’s always a good idea to visualize the distribution before committing to your summary statistics. In the following plot, the frequency polygons of `dep_delay` are displayed for each day (365 in total), from minimum `dep_delay` to at most 2 hours.
+
+```{r}
+#| label: distributions example
+#| output-location: column
+#| echo: true
+
+flights |>
+  dplyr::filter(.data[["dep_delay"]] < 120) |> 
+  ggplot2::ggplot(
+    mapping = ggplot2::aes(
+      x = dep_delay, 
+      group = interaction(.data[["day"]],
+                          .data[["month"]]))) + 
+  ggplot2::geom_freqpoly(binwidth = 5, alpha = 1/5)
+
+```
+
+## Position
+
+We can use `dplyr::first()`, `dplyr::last()` and `dplyr::nth()` to extract a value at a specific position. For example, we can find the first, fifth and last departure for each day:
+
+```{r}
+#| label: extracting example
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["year"]], 
+                  .data[["month"]], 
+                  .data[["day"]]) |>
+  dplyr::summarize(
+    first_dep = dplyr::first(.data[["dep_time"]], 
+                             na_rm = TRUE), 
+    fifth_dep = dplyr::nth(.data[["dep_time"]], 
+                           n = 5, 
+                           na_rm = TRUE),
+    last_dep = dplyr::last(.data[["dep_time"]], 
+                           na_rm = TRUE),
+    .groups = "drop"
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Position (Extracting vs filtering)
+
+Extracting values at positions is complementary to filtering on ranks. Filtering gives you all variables, with each observation in a separate row:
+
+```{r}
+#| label: filtering example
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::group_by(.data[["year"]], 
+                  .data[["month"]], 
+                  .data[["day"]]) |>
+  dplyr::mutate(
+    r = dplyr::min_rank(.data[["sched_dep_time"]])
+  ) |> 
+  dplyr::filter(.data[["r"]] %in% c(1, max(.data[["r"]])))  |> 
+  dplyr::select(c("year", "month", "day", "tailnum",
+                  "r", "sched_dep_time")) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## With `mutate()`
+
+-  `x / sum(x)` calculates the proportion of a total.
+-  `(x - mean(x)) / sd(x)` computes a Z-score (standardized to mean 0 and sd 1).
+-  `(x - min(x)) / (max(x) - min(x))` standardizes to range [0, 1].
+-  `x / first(x)` computes an index based on the first observation.
+
+It is easy to get the difference between `mutate` and `summarize` confused. Remember that `mutate` returns the same number of rows in a data frame, `summarize` returns just one row, and `summarize` with groups returns a row for each group.
+
+## Exercises 14.6.7 
+
+Brainstorm different ways to assess the typical delay characteristics of a group of flights.
+
+```{r}
+#| label: delay eda
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::filter(!is.na(.data[["flight"]])) |> 
+  dplyr::filter(.data[["arr_delay"]] > 10) |> 
+  dplyr::group_by(.data[["origin"]], .data[["dest"]]) |> 
+  dplyr::summarise(
+    arr_delay_num = dplyr::n(),
+    arr_delay_mean = mean(.data[["arr_delay"]], na.rm = TRUE),
+    arr_delay_median = mean(.data[["arr_delay"]], na.rm = TRUE),
+    arr_delay_min = min(.data[["arr_delay"]], na.rm = TRUE),
+    arr_delay_max = max(.data[["arr_delay"]], na.rm = TRUE),
+  ) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Exercises 14.6.7
+
+Brainstorm different ways to assess the typical delay characteristics of a group of flights.
+
+::: {.panel-tabset}
+
+### EWR
+
+```{r}
+#| label: delay ewr
+#| echo: true
+#| output-location: column
+#| fig-height: 12
+#| fig-width: 5
+
+flights_summary <- flights |> 
+  dplyr::filter(!is.na(.data[["flight"]])) |> 
+  dplyr::filter(.data[["arr_delay"]] > 10) |> 
+  dplyr::filter(.data[["origin"]] == "EWR") 
+
+flights_summary |> 
+  ggplot2::ggplot(
+    mapping = ggplot2::aes(
+      x = .data[["arr_delay"]]
+    )
+  ) +
+  ggplot2::geom_histogram(bins = 30) + 
+  ggplot2::stat_bin(
+    aes(
+      x = .data[["arr_delay"]],
+      y = ggplot2::after_stat(.data[["count"]]),
+      label = ggplot2::after_stat(
+        dplyr::if_else(.data[["count"]] > 0,
+                       as.character(.data[["count"]]),
+                       "")
+        )
+    ),
+    bins = 30,
+    geom = "text", 
+    vjust = -0.5,
+    size = 2.25
+  ) +
+  ggplot2::facet_grid(
+    rows = ggplot2::vars(.data[["carrier"]]),
+    scales = "free_y") +
+  ggh4x::facetted_pos_scales(
+    y = list(
+      .data[["carrier"]] == "9E" ~
+        ggplot2::scale_y_continuous(
+          limits = c(0, 120)),
+      .data[["carrier"]] == "AA" ~
+        ggplot2::scale_y_continuous(
+          limits = c(0, 350)),
+      .data[["carrier"]] == "AS" ~
+        ggplot2::scale_y_continuous(
+          limits = c(0, 70)),
+      .data[["carrier"]] == "B6" ~
+        ggplot2::scale_y_continuous(
+          limits = c(0, 850)),
+      .data[["carrier"]] == "DL" ~
+        ggplot2::scale_y_continuous(
+          limits = c(0, 600)),
+      .data[["carrier"]] == "EV" ~
+        ggplot2::scale_y_continuous(
+          limits = c(0, 7500)),
+      .data[["carrier"]] == "MQ" ~
+        ggplot2::scale_y_continuous(
+          limits = c(0, 350)),
+      .data[["carrier"]] == "OO" ~
+        ggplot2::scale_y_continuous(
+          limits = c(0, 2)),
+      .data[["carrier"]] == "UA" ~
+        ggplot2::scale_y_continuous(
+          limits = c(0, 6500)),
+      .data[["carrier"]] == "US" ~
+        ggplot2::scale_y_continuous(
+          limits = c(0, 500)),
+      .data[["carrier"]] == "VX" ~
+        ggplot2::scale_y_continuous(
+          limits = c(0, 150)),
+      .data[["carrier"]] == "WN" ~
+        ggplot2::scale_y_continuous(
+          limits = c(0, 900))
+  )) +
+  ggplot2::theme(
+    axis.title.y = ggplot2::element_text(angle = 0),
+    axis.ticks.y.left = ggplot2::element_blank(),
+    axis.text.y.left = ggplot2::element_blank(),
+  ) +
+  ggplot2::labs(
+    x = "Arrival Delay",
+    y = "")
+  
+
+```
+
+### LGA
+
+```{r}
+#| label: delay lga atl
+#| echo: true
+#| output-location: column
+#| fig-height: 12
+#| fig-width: 5
+
+flights_summary <- flights |> 
+  dplyr::filter(!is.na(.data[["flight"]])) |> 
+  dplyr::filter(.data[["arr_delay"]] > 10) |> 
+  dplyr::filter(.data[["origin"]] == "LGA")
+
+flights_summary |> 
+  ggplot2::ggplot(
+    mapping = ggplot2::aes(x = .data[["arr_delay"]])
+  ) +
+  ggplot2::geom_histogram(
+    bins = 30
+  ) + 
+  ggplot2::stat_bin(
+    aes(x = .data[["arr_delay"]],
+        y = ggplot2::after_stat(.data[["count"]]),
+        label = ggplot2::after_stat(
+        dplyr::if_else(.data[["count"]] > 0,
+                       as.character(.data[["count"]]),
+                       "")
+        )
+    ),
+    bins = 30,
+    geom = "text", 
+    vjust = -0.5,
+    size = 2.25
+  ) +
+  ggplot2::facet_grid(
+    rows = ggplot2::vars(.data[["carrier"]]),
+    scales = "free_y") +
+  ggh4x::facetted_pos_scales(
+    y = list(
+      .data[["carrier"]] == "9E" ~
+        ggplot2::scale_y_continuous(limits = c(0, 350)),
+      .data[["carrier"]] == "AA" ~
+        ggplot2::scale_y_continuous(limits = c(0, 1600)),
+      .data[["carrier"]] == "B6" ~
+        ggplot2::scale_y_continuous(limits = c(0, 1000)),
+      .data[["carrier"]] == "DL" ~
+        ggplot2::scale_y_continuous(limits = c(0, 3000)),
+      .data[["carrier"]] == "EV" ~
+        ggplot2::scale_y_continuous(limits = c(0, 1100)),
+      .data[["carrier"]] == "F9" ~
+        ggplot2::scale_y_continuous(limits = c(0, 200)),
+      .data[["carrier"]] == "FL" ~
+        ggplot2::scale_y_continuous(limits = c(0, 700)),
+      .data[["carrier"]] == "MQ" ~
+        ggplot2::scale_y_continuous(limits = c(0, 3000)),
+      .data[["carrier"]] == "OO" ~
+        ggplot2::scale_y_continuous(limits = c(0, 3)),
+      .data[["carrier"]] == "UA" ~
+        ggplot2::scale_y_continuous(limits = c(0, 1000)),
+      .data[["carrier"]] == "US" ~
+        ggplot2::scale_y_continuous(limits = c(0, 1600)),
+      .data[["carrier"]] == "WN" ~
+        ggplot2::scale_y_continuous(limits = c(0, 1000)),
+      .data[["carrier"]] == "YV" ~
+        ggplot2::scale_y_continuous(limits = c(0, 100))
+  )) +
+  ggplot2::theme(
+    axis.title.y = ggplot2::element_text(angle = 0),
+    axis.ticks.y.left = ggplot2::element_blank(),
+    axis.text.y.left = ggplot2::element_blank(),
+  ) +
+  ggplot2::labs(
+    x = "Arrival Delay",
+    y = "")
+  
+
+```
+
+### JFK
+
+```{r}
+#| label: delay jfk lax
+#| echo: true
+#| output-location: column
+#| fig-height: 12
+#| fig-width: 5
+
+
+flights_summary <- flights |> 
+  dplyr::filter(!is.na(.data[["flight"]])) |> 
+  dplyr::filter(.data[["arr_delay"]] > 10) |> 
+  dplyr::filter(.data[["origin"]] == "JFK")
+
+flights_summary |> 
+  ggplot2::ggplot(
+    mapping = ggplot2::aes(x = .data[["arr_delay"]])
+  ) +
+  ggplot2::geom_histogram() + 
+  ggplot2::stat_bin(
+    aes(x = .data[["arr_delay"]],
+        y = ggplot2::after_stat(.data[["count"]]),
+        label = ggplot2::after_stat(
+        dplyr::if_else(.data[["count"]] > 0,
+                       as.character(.data[["count"]]),
+                       "")
+        )
+    ),
+    bins = 30,
+    geom = "text", 
+    vjust = -0.5,
+    size = 2.25
+  ) +
+  ggplot2::facet_grid(
+    rows = ggplot2::vars(.data[["carrier"]]),
+    scales = "free_y") +
+  ggh4x::facetted_pos_scales(
+    y = list(
+      .data[["carrier"]] == "9E" ~
+        ggplot2::scale_y_continuous(limits = c(0, 1800)),
+      .data[["carrier"]] == "AA" ~
+        ggplot2::scale_y_continuous(limits = c(0, 1800)),
+      .data[["carrier"]] == "B6" ~
+        ggplot2::scale_y_continuous(limits = c(0, 6500)),
+      .data[["carrier"]] == "DL" ~
+        ggplot2::scale_y_continuous(limits = c(0, 2000)),
+      .data[["carrier"]] == "EV" ~
+        ggplot2::scale_y_continuous(limits = c(0, 200)),
+      .data[["carrier"]] == "HA" ~
+        ggplot2::scale_y_continuous(limits = c(0, 50)),
+      .data[["carrier"]] == "MQ" ~
+        ggplot2::scale_y_continuous(limits = c(0, 1000)),
+      .data[["carrier"]] == "UA" ~
+        ggplot2::scale_y_continuous(limits = c(0, 600)),
+      .data[["carrier"]] == "US" ~
+        ggplot2::scale_y_continuous(limits = c(0, 400)),
+      .data[["carrier"]] == "VX" ~
+        ggplot2::scale_y_continuous(limits = c(0, 400))
+  )) +
+  ggplot2::theme(
+    axis.title.y = ggplot2::element_text(angle = 0),
+    axis.ticks.y.left = ggplot2::element_blank(),
+    axis.text.y.left = ggplot2::element_blank(),
+  ) +
+  ggplot2::labs(
+    x = "Arrival Delay",
+    y = "")
+  
+
+```
+
+:::
+
+## Exercises 14.6.7 
+
+Which destinations show the greatest variation in air speed ?
+
+```{r}
+#| label: air speed variation
+#| output-location: column
+#| echo: true
+
+flights |> 
+  dplyr::mutate(
+    air_time_hours = .data[["air_time"]] / 60,
+    air_speed_mph = .data[["distance"]] / .data[["air_time_hours"]]
+  ) |> 
+  dplyr::summarise(
+    air_speed_var = stats::var(.data[["air_speed_mph"]],
+                               na.rm = TRUE),
+    .by = c("dest")
+  ) |> 
+  dplyr::arrange(dplyr::desc(.data[["air_speed_var"]])) |> 
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    theme = reactablefmtr::dark()
+  )
+
+```
+
+## Exercises 14.6.7 
+
+Create a plot to further explore the adventures of EGE (Eagle County Regional Airport). Can you find any evidence that the airport moved locations?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: EGE Jan Feb
+#| code-fold: true
+#| echo: true
+
+month_names <- c(
+  `1` = "January",
+  `2` = "February"
+)
+
+flights_ege <- flights |> 
+  dplyr::filter(.data[["dest"]] == "EGE") |> 
+  dplyr::mutate(
+    distance = as.factor(.data[["distance"]])
+  )
+
+flights_ege |> 
+  dplyr::filter(.data[["month"]] %in% c(1, 2)) |> 
+  ggplot2::ggplot(
+    mapping = ggplot2::aes(
+      x = .data[["distance"]],
+      fill = .data[["origin"]]
+    )
+  ) +
+  ggplot2::geom_bar() +
+  ggplot2::facet_wrap(
+    facets = ggplot2::vars(.data[["month"]]),
+    labeller = ggplot2::as_labeller(month_names)
+  ) +
+  ggplot2::theme(
+    axis.title.y = ggplot2::element_text(angle = 0)
+  ) +
+  ggplot2::labs(
+    y = "Frequency"
+  ) 
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: EGE Mar Apr Dec
+#| code-fold: true
+#| echo: true
+
+month_names <- c(
+  `3` = "March",
+  `4` = "April",
+  `12` = "December"
+)
+
+flights_ege <- flights |> 
+  dplyr::filter(.data[["dest"]] == "EGE") |> 
+  dplyr::mutate(
+    distance = as.factor(.data[["distance"]])
+  )
+
+flights_ege |> 
+  dplyr::filter(.data[["month"]] %in% c(3, 4, 12)) |> 
+  ggplot2::ggplot(
+    mapping = ggplot2::aes(
+      x = .data[["distance"]],
+      fill = .data[["origin"]]
+    )
+  ) +
+  ggplot2::geom_bar() +
+  ggplot2::facet_wrap(
+    facets = ggplot2::vars(.data[["month"]]),
+    labeller = ggplot2::as_labeller(month_names)
+  ) +
+  ggplot2::theme(
+    axis.title.y = ggplot2::element_text(angle = 0)
+  ) +
+  ggplot2::labs(
+    y = "Frequency"
+  ) 
+  
+
+```
+
+:::
+
+::::
