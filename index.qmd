@@ -1,6 +1,6 @@
 ---
 title: |
-  Chapter 14: Numbers
+  Chapter 13: Numbers
 subtitle: |
   For the R For Data Science 2nd Edition Book Club Cohort 9  [`r fontawesome::fa(name = "youtube")`](https://www.youtube.com/playlist?list=PL3x6DOfs2NGjVMs1NtbWu4s_ZgGhGKnrN)
 author: Jeremy Selva [`r fontawesome::fa(name = "linkedin")`](https://www.linkedin.com/in/jeremy-selva-085b9112a/) <br> @JauntyJJS [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS) [`r fontawesome::fa(name = "twitter")`](https://twitter.com/JauntyJJS) <br> https://jeremy-selva.netlify.app [`r fontawesome::fa(name = "link")`](https://jeremy-selva.netlify.app/)
@@ -15,19 +15,19 @@ format:
     preview-links: auto
     include-in-header: 
       text: |
-        <meta name="github-repo" content="JauntyJJS/r4ds-bookclub-cohort9-chapter14" />
-        <meta name="twitter:title" content="Chapter 14: Numbers slides for R For Data Science 2nd Edition Book Club Cohort 9" />
+        <meta name="github-repo" content="JauntyJJS/r4ds-bookclub-cohort9-chapter13" />
+        <meta name="twitter:title" content="Chapter 13: Numbers slides for R For Data Science 2nd Edition Book Club Cohort 9" />
         <meta name="twitter:description" content="This slide deck covers Chapter 2: Data Visualisation from the book, R For Data Science 2nd Edition. This is presented for the R4DS book club, cohort 9." />
-        <meta name="twitter:url" content="https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14" />
-        <meta name="twitter:image" content="https://raw.githubusercontent.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14/main/share-card.png" />
-        <meta name="twitter:image:alt" content="Title slide of Chapter 14: Numbers from the book, R For Data Science 2nd Edition presented at the R4DS book club, cohort 9." />
+        <meta name="twitter:url" content="https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13" />
+        <meta name="twitter:image" content="https://raw.githubusercontent.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13/main/share-card.png" />
+        <meta name="twitter:image:alt" content="Title slide of Chapter 13: Numbers from the book, R For Data Science 2nd Edition presented at the R4DS book club, cohort 9." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@JauntyJJS" />
         <meta name="twitter:site" content="@JauntyJJS" />
-        <meta property="og:title" content="Chapter 14: Numbers slides for R For Data Science 2nd Edition Book Club Cohort 9" />
-        <meta property="og:description" content="This slide deck covers Chapter 14: Numbers from the book, R For Data Science 2nd Edition. This is presented for the R4DS book club, cohort 14." />
-        <meta property="og:url" content="https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14" />
-        <meta property="og:image" content="https://raw.githubusercontent.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14/main/share-card.png" />
+        <meta property="og:title" content="Chapter 13: Numbers slides for R For Data Science 2nd Edition Book Club Cohort 9" />
+        <meta property="og:description" content="This slide deck covers Chapter 13: Numbers from the book, R For Data Science 2nd Edition. This is presented for the R4DS book club, cohort 9." />
+        <meta property="og:url" content="https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13" />
+        <meta property="og:image" content="https://raw.githubusercontent.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13/main/share-card.png" />
         <meta property="og:image:alt" content="Title slide of Chapter 2: Data Visualisation from the book, R For Data Science 2nd Edition presented at the R4DS book club, cohort 9." />
         <meta property="og:site_name" content="R4DS Cohort 9" />
         <meta property="og:type" content="website" />
@@ -66,8 +66,8 @@ library(ggh4x)
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -81,8 +81,8 @@ During the data import process, numeric columns are usually expressed in integer
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -111,8 +111,8 @@ c("$1,234", "USD 3,513", "59%") |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -137,8 +137,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -165,8 +165,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -196,8 +196,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -222,8 +222,8 @@ dplyr::n()
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -254,8 +254,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -312,8 +312,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -341,8 +341,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -367,8 +367,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -402,8 +402,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -434,8 +434,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -490,8 +490,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -544,8 +544,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -576,8 +576,8 @@ x * c(1, 2, 3)
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -631,8 +631,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -702,8 +702,8 @@ df |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -741,8 +741,8 @@ In R, `%/%` does integer division and `%%` computes the remainder:
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -771,8 +771,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -826,8 +826,8 @@ cancelled_flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -853,8 +853,8 @@ exp(log(100))
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -879,8 +879,8 @@ round(123.456, -2) # round to nearest hundred
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -899,8 +899,8 @@ round(c(1.5, 2.5, -1.5, -2.5))
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -925,8 +925,8 @@ See Markus Savli's [Linkedin Post](https://www.linkedin.com/posts/markus-savli_r
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -963,8 +963,8 @@ ceiling(x / 100) * 100
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -993,8 +993,8 @@ cut(x, breaks = c(0, 5, 10, 100))
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1026,8 +1026,8 @@ cut(y, breaks = c(0, 5, 10, 15, 20))
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1096,8 +1096,8 @@ dplyr::cummean(x)
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1111,8 +1111,8 @@ If you need more complex rolling or sliding aggregates, try the `slider` package
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1126,8 +1126,8 @@ What trigonometric functions does R provide? Guess some names and look up the do
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1153,8 +1153,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1191,8 +1191,8 @@ calculated_flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1221,8 +1221,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1245,8 +1245,8 @@ rank(x,ties.method = "min", na.last = "keep")
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1267,8 +1267,8 @@ rank(dplyr::desc(x),ties.method = "min", na.last = "keep")
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1330,8 +1330,8 @@ dplyr::cume_dist(x)
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1360,8 +1360,8 @@ tibble(id = 1:10) |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1389,8 +1389,8 @@ dplyr::lead(x, n = 1)
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1420,8 +1420,8 @@ x != dplyr::lag(x)
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1456,8 +1456,8 @@ events |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1483,8 +1483,8 @@ events |> dplyr::mutate(
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1513,8 +1513,8 @@ df |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1546,8 +1546,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1582,8 +1582,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1609,8 +1609,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1675,8 +1675,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1740,8 +1740,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1769,8 +1769,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1801,8 +1801,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1836,8 +1836,8 @@ filtered_flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1864,8 +1864,8 @@ filtered_flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1897,8 +1897,8 @@ filtered_flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1929,8 +1929,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -1963,8 +1963,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2004,8 +2004,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2044,8 +2044,8 @@ flights |>
 ```
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2083,8 +2083,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2098,8 +2098,8 @@ Note that by default, `stats::quantile()` uses algorithm "type 7". Difference be
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2134,8 +2134,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2161,8 +2161,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2199,8 +2199,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2233,8 +2233,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2249,8 +2249,8 @@ It is easy to get the difference between `mutate` and `summarize` confused. Reme
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2284,8 +2284,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2540,8 +2540,8 @@ flights_summary |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2575,8 +2575,8 @@ flights |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
 
@@ -2676,7 +2676,7 @@ flights_ege |>
 
 ::: footer
 
-https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14
-[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter14/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter14)
+https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+[`r fontawesome::fa(name = "link")`](https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13/) [`r fontawesome::fa(name = "github")`](https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13)
 
 :::
