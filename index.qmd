@@ -346,12 +346,12 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.3.1
+## Exercise 13.3.1
 
 How can you use count() to count the number rows with a missing value for a given variable?
 
 ```{r}
-#| label: exercise 14.3.1.1
+#| label: exercise 13.3.1.1
 #| output-location: column
 #| echo: true
 
@@ -372,12 +372,12 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.3.1
+## Exercise 13.3.1
 
 Alternatively
 
 ```{r}
-#| label: exercise 14.3.1.1 method 2
+#| label: exercise 13.3.1.1 method 2
 #| output-location: column
 #| echo: true
 
@@ -407,12 +407,12 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.3.1
+## Exercise 13.3.1
 
 How can you use count() to count the number rows with a missing value for a given variable?
 
 ```{r}
-#| label: exercise 14.3.1.1 method 3
+#| label: exercise 13.3.1.1 method 3
 #| echo: true
 
 flights |> 
@@ -439,7 +439,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.3.2
+## Exercise 13.3.2
 
 Expand the following calls to `count()` to instead use `group_by()`, `summarize()`, and `arrange()`:
 
@@ -448,7 +448,7 @@ Expand the following calls to `count()` to instead use `group_by()`, `summarize(
 ::: {.column width="50%"}
 
 ```{r}
-#| label: count method Exercise 14.3.2 1
+#| label: count method Exercise 13.3.2 1
 #| echo: true
 
 flights |> 
@@ -468,7 +468,7 @@ flights |>
 ::: {.column width="50%"}
 
 ```{r}
-#| label: group by method Exercise 14.3.2 1
+#| label: group by method Exercise 13.3.2 1
 #| echo: true
 
 flights |> 
@@ -495,7 +495,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.3.2
+## Exercise 13.3.2
 
 Expand the following calls to `count()` to instead use `group_by()`, `summarize()`, and `arrange()`:
 
@@ -504,7 +504,7 @@ Expand the following calls to `count()` to instead use `group_by()`, `summarize(
 ::: {.column width="50%"}
 
 ```{r}
-#| label: count method Exercise 14.3.2 2
+#| label: count method Exercise 13.3.2 2
 #| echo: true
 
 flights |> 
@@ -524,7 +524,7 @@ flights |>
 ::: {.column width="50%"}
 
 ```{r}
-#| label: group by method Exercise 14.3.2 2
+#| label: group by method Exercise 13.3.2 2
 #| echo: true
 
 flights |> 
@@ -1116,7 +1116,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.4.8
+## Exercise 13.4.8
 
 What trigonometric functions does R provide? Guess some names and look up the documentation. Do they use degrees or radians?
 
@@ -1131,7 +1131,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.4.8
+## Exercise 13.4.8
 
 Currently `dep_time` and `sched_dep_time` are convenient to look at, but hard to compute with because they’re not really continuous numbers. You can see the basic problem by running the code below: there’s a gap between each hour.
 
@@ -1158,7 +1158,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.4.8
+## Exercise 13.4.8
 
 Convert them to a more truthful representation of time (either fractional hours or minutes since midnight).
 
@@ -1196,7 +1196,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.4.8
+## Exercise 13.4.8
 
 Round `dep_time` and `arr_time` to the nearest five minutes.
 
@@ -1518,7 +1518,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
 
 Find the 10 most delayed (delay arrival) flights using a ranking function. 
 
@@ -1551,7 +1551,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
 
 Which plane (tailnum) has the worst on-time record ?
 
@@ -1587,7 +1587,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
 
 What time of day should you fly if you want to avoid delays as much as possible?
 
@@ -1614,7 +1614,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
 
 :::: {.columns}
 
@@ -1680,7 +1680,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
 
 :::: {.columns}
 
@@ -1745,7 +1745,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
 
 For each destination, compute the total minutes of delay. 
 
@@ -1774,7 +1774,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
 
 For each flight, compute the proportion of the total delay for its destination.
 
@@ -1806,7 +1806,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
 
 Delays are typically temporally correlated: Using lag(), explore how the average flight delay for an hour is related to the average delay for the previous hour.
 
@@ -1841,7 +1841,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
 
 Delays are typically temporally correlated: Using lag(), explore how the average flight delay for an hour is related to the average delay for the previous hour.
 
@@ -1869,7 +1869,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
 
 Delays are typically temporally correlated: Later flights are delayed to allow earlier flights to leave
 
@@ -1902,7 +1902,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
 
 Look at each destination. Can you find flights that are suspiciously fast (above 575 mph) (i.e. flights that represent a potential data entry error) ? 
 
@@ -1934,7 +1934,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
  
 Compute the air time of a flight relative to the shortest flight to that destination. Which flights were most delayed in the air (longest relative air time) ?
 
@@ -1968,7 +1968,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercise 14.5.4
+## Exercise 13.5.4
 
 Find all destinations that are flown by at least two carriers. Use those destinations to come up with a relative ranking of the carriers based on their performance for the same destination.
 
@@ -2254,7 +2254,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercises 14.6.7 
+## Exercises 13.6.7 
 
 Brainstorm different ways to assess the typical delay characteristics of a group of flights.
 
@@ -2289,7 +2289,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercises 14.6.7
+## Exercises 13.6.7
 
 Brainstorm different ways to assess the typical delay characteristics of a group of flights.
 
@@ -2545,7 +2545,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercises 14.6.7 
+## Exercises 13.6.7 
 
 Which destinations show the greatest variation in air speed ?
 
@@ -2580,7 +2580,7 @@ https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
 
 :::
 
-## Exercises 14.6.7 
+## Exercises 13.6.7 
 
 Create a plot to further explore the adventures of EGE (Eagle County Regional Airport). Can you find any evidence that the airport moved locations?
 
