@@ -17,7 +17,7 @@ format:
       text: |
         <meta name="github-repo" content="JauntyJJS/r4ds-bookclub-cohort9-chapter13" />
         <meta name="twitter:title" content="Chapter 13: Numbers slides for R For Data Science 2nd Edition Book Club Cohort 9" />
-        <meta name="twitter:description" content="This slide deck covers Chapter 2: Data Visualisation from the book, R For Data Science 2nd Edition. This is presented for the R4DS book club, cohort 9." />
+        <meta name="twitter:description" content="This slide deck covers Chapter 13: Numbers from the book, R For Data Science 2nd Edition. This is presented for the R4DS book club, cohort 9." />
         <meta name="twitter:url" content="https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13" />
         <meta name="twitter:image" content="https://raw.githubusercontent.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13/main/share-card.png" />
         <meta name="twitter:image:alt" content="Title slide of Chapter 13: Numbers from the book, R For Data Science 2nd Edition presented at the R4DS book club, cohort 9." />
@@ -28,7 +28,7 @@ format:
         <meta property="og:description" content="This slide deck covers Chapter 13: Numbers from the book, R For Data Science 2nd Edition. This is presented for the R4DS book club, cohort 9." />
         <meta property="og:url" content="https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13" />
         <meta property="og:image" content="https://raw.githubusercontent.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13/main/share-card.png" />
-        <meta property="og:image:alt" content="Title slide of Chapter 2: Data Visualisation from the book, R For Data Science 2nd Edition presented at the R4DS book club, cohort 9." />
+        <meta property="og:image:alt" content="Title slide of Chapter 13: Numbers from the book, R For Data Science 2nd Edition presented at the R4DS book club, cohort 9." />
         <meta property="og:site_name" content="R4DS Cohort 9" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
